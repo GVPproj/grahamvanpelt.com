@@ -1,0 +1,33 @@
+# Binaries
+gomaketest
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Build directories
+build/
+dist/
+bin/
+
+# Temporary files
+tmp/
+*.tmp
+
+# Generated Go files from templ
+*_templ.go
+
+# Go workspace file
+go.work
+go.work.sum
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,36 @@
+package pages
+
+import "gomaketest/views/layouts"
+
+templ HomePage() {
+	@layouts.BaseLayout("Home - MyApp") {
+		<div class="page-header">
+			<h1>Welcome to MyApp</h1>
+			<p class="page-subtitle">Your Go web application with Templ</p>
+		</div>
+		
+		<div class="content-section">
+			<div class="card">
+				<h3>Getting Started</h3>
+				<p>This is your homepage with a vertical navigation bar. The layout is responsive and ready for your content.</p>
+				<ul>
+					<li>✅ Go web server with routing</li>
+					<li>✅ Templ templating engine</li>
+					<li>✅ Responsive vertical navbar</li>
+					<li>✅ Clean, modern styling</li>
+				</ul>
+			</div>
+			
+			<div class="card">
+				<h3>Next Steps</h3>
+				<p>Start building your application by:</p>
+				<ol>
+					<li>Adding new pages and components</li>
+					<li>Customizing the styling</li>
+					<li>Adding database integration</li>
+					<li>Implementing authentication</li>
+				</ol>
+			</div>
+		</div>
+	}
+}
