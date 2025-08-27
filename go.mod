@@ -1,4 +1,4 @@
-module gomaketest
+module music
 
 go 1.25.0
 

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gomaketest/internal/handler"
+	"music/internal/handler"
 	"log"
 	"net/http"
 	"os"
@@ -12,7 +12,7 @@ func main() {
 	if len(os.Args) > 1 && os.Args[1] == "serve" {
 		startServer()
 	} else {
-		fmt.Println("Usage: gomaketest serve")
+		fmt.Println("Usage: music serve")
 	}
 }
 

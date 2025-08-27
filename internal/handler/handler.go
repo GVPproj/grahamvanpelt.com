@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"gomaketest/views/pages"
+	"music/views/pages"
 	"net/http"
 )
 
