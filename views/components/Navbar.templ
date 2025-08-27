@@ -1,33 +1,95 @@
 package components
 
+css navbarStyle() {
+	padding: 1.5rem 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+css navbarBrandStyle() {
+	padding: 0 1.5rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #34495e;
+	padding-bottom: 1rem;
+}
+
+css navbarBrandTitle() {
+	color: #ecf0f1;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+css navLinksStyle() {
+	list-style: none;
+	flex: 1;
+}
+
+css navItemStyle() {
+	margin: 0.25rem 0;
+}
+
+css navLinkStyle() {
+	display: flex;
+	align-items: center;
+	padding: 0.75rem 1.5rem;
+	color: #bdc3c7;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	border-left: 3px solid transparent;
+}
+
+css navLinkHover() {
+	background-color: #34495e;
+	color: #ecf0f1;
+	border-left-color: #3498db;
+}
+
+css navLinkActive() {
+	background-color: #34495e;
+	color: #ecf0f1;
+	border-left-color: #e74c3c;
+}
+
+css navIconStyle() {
+	font-size: 1.2rem;
+	margin-right: 0.75rem;
+	width: 1.5rem;
+	text-align: center;
+}
+
+css navTextStyle() {
+	font-weight: 500;
+}
+
 templ Navbar(currentPath string) {
-	<nav class="navbar">
-		<div class="navbar-brand">
-			<h2>MyApp</h2>
+	<nav class={ navbarStyle() }>
+		<div class={ navbarBrandStyle() }>
+			<h2 class={ navbarBrandTitle() }>MyApp</h2>
 		</div>
-		<ul class="nav-links">
-			<li class="nav-item">
-				<a href="/" class={ "nav-link", templ.KV("active", currentPath == "/") }>
-					<span class="nav-icon">🏠</span>
-					<span class="nav-text">Home</span>
+		<ul class={ navLinksStyle() }>
+			<li class={ navItemStyle() }>
+				<a href="/" class={ navLinkStyle(), templ.KV(navLinkActive(), currentPath == "/") }>
+					<span class={ navIconStyle() }>🏠</span>
+					<span class={ navTextStyle() }>Home</span>
 				</a>
 			</li>
-			<li class="nav-item">
-				<a href="/about" class={ "nav-link", templ.KV("active", currentPath == "/about") }>
-					<span class="nav-icon">ℹ️</span>
-					<span class="nav-text">About</span>
+			<li class={ navItemStyle() }>
+				<a href="/about" class={ navLinkStyle(), templ.KV(navLinkActive(), currentPath == "/about") }>
+					<span class={ navIconStyle() }>ℹ️</span>
+					<span class={ navTextStyle() }>About</span>
 				</a>
 			</li>
-			<li class="nav-item">
-				<a href="/services" class={ "nav-link", templ.KV("active", currentPath == "/services") }>
-					<span class="nav-icon">⚙️</span>
-					<span class="nav-text">Services</span>
+			<li class={ navItemStyle() }>
+				<a href="/services" class={ navLinkStyle(), templ.KV(navLinkActive(), currentPath == "/services") }>
+					<span class={ navIconStyle() }>⚙️</span>
+					<span class={ navTextStyle() }>Services</span>
 				</a>
 			</li>
-			<li class="nav-item">
-				<a href="/contact" class={ "nav-link", templ.KV("active", currentPath == "/contact") }>
-					<span class="nav-icon">📧</span>
-					<span class="nav-text">Contact</span>
+			<li class={ navItemStyle() }>
+				<a href="/contact" class={ navLinkStyle(), templ.KV(navLinkActive(), currentPath == "/contact") }>
+					<span class={ navIconStyle() }>📧</span>
+					<span class={ navTextStyle() }>Contact</span>
 				</a>
 			</li>
 		</ul>
