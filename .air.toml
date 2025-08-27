@@ -4,8 +4,8 @@ root = "."
  
  [build]
  args_bin = ["serve"]
- bin = "./tmp/gomaketest"
- cmd = "templ generate && go build -o ./tmp/gomaketest ./cmd/gomaketest/main.go"
+ bin = "./tmp/music"
+ cmd = "templ generate && go build -o ./tmp/music ./cmd/music/main.go"
  delay = 1000
  exclude_dir = ["assets", "tmp", "vendor", "testdata", "node_modules"]
  exclude_file = []
