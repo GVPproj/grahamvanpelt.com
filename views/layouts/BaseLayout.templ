@@ -2,7 +2,7 @@ package layouts
 
 import "gomaketest/views/components"
 
-templ BaseLayout(title string) {
+templ BaseLayout(title string, currentPath string) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -14,7 +14,7 @@ templ BaseLayout(title string) {
 		<body>
 			<div class="app-container">
 				<aside class="sidebar">
-					@components.Navbar()
+					@components.Navbar(currentPath)
 				</aside>
 				<main class="main-content">
 					{ children... }

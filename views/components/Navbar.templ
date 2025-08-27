@@ -1,31 +1,31 @@
 package components
 
-templ Navbar() {
+templ Navbar(currentPath string) {
 	<nav class="navbar">
 		<div class="navbar-brand">
 			<h2>MyApp</h2>
 		</div>
 		<ul class="nav-links">
 			<li class="nav-item">
-				<a href="/" class="nav-link active">
+				<a href="/" class={ "nav-link", templ.KV("active", currentPath == "/") }>
 					<span class="nav-icon">🏠</span>
 					<span class="nav-text">Home</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="/about" class="nav-link">
+				<a href="/about" class={ "nav-link", templ.KV("active", currentPath == "/about") }>
 					<span class="nav-icon">ℹ️</span>
 					<span class="nav-text">About</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="/services" class="nav-link">
+				<a href="/services" class={ "nav-link", templ.KV("active", currentPath == "/services") }>
 					<span class="nav-icon">⚙️</span>
 					<span class="nav-text">Services</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="/contact" class="nav-link">
+				<a href="/contact" class={ "nav-link", templ.KV("active", currentPath == "/contact") }>
 					<span class="nav-icon">📧</span>
 					<span class="nav-text">Contact</span>
 				</a>

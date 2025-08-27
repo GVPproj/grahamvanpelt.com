@@ -1,14 +1,14 @@
+
 package pages
 
 import "gomaketest/views/layouts"
 
-templ HomePage(currentPath string) {
-	@layouts.BaseLayout("Home - MyApp", currentPath) {
+templ AboutPage(currentPath string) {
+	@layouts.BaseLayout("About - MyApp", currentPath) {
 		<div class="page-header">
-			<h1>Welcome to MyApp</h1>
+			<h1>Welcome to About</h1>
 			<p class="page-subtitle">Your Go web application with Templ</p>
 		</div>
-		
 		<div class="content-section">
 			<div class="card">
 				<h3>Getting Started</h3>
@@ -20,7 +20,6 @@ templ HomePage(currentPath string) {
 					<li>✅ Clean, modern styling</li>
 				</ul>
 			</div>
-			
 			<div class="card">
 				<h3>Next Steps</h3>
 				<p>Start building your application by:</p>
