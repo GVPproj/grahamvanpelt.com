@@ -12,7 +12,8 @@ func main() {
 	if len(os.Args) > 1 && os.Args[1] == "serve" {
 		startServer()
 	} else {
-		fmt.Println("Usage: music serve")
+		// Default to serving if no args (for Railway)
+		startServer()
 	}
 }
 
@@ -26,8 +27,12 @@ func startServer() {
 	mux.HandleFunc("/", handler.HomePage)
 	mux.HandleFunc("/about", handler.AboutPage)
 
-	port := ":8080"
-	fmt.Printf("Server starting on http://localhost%s\n", port)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	port = ":" + port
+	fmt.Printf("Server starting on port %s\n", port)
 
 	if err := http.ListenAndServe(port, mux); err != nil {
 		log.Fatal(err)
